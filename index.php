@@ -1,5 +1,26 @@
 <?php 
 
+    function generatePassword($length) {
+
+        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&/^,.><€";
+        $password = '';
+        for ($i = 0; $i < $length; $i++) {
+            $password.= $characters[rand(0, strlen($characters) - 1)];
+        }
+
+        return $password;
+    }
+
+    if (isset($_GET['number'])) {
+        $lenght = (int)($_GET['number']);
+
+        if ($lenght >=6 && $lenght <=12) {
+            $password = generatePassword($lenght);
+        } else {
+            $error = "Inserisci un numero compreso tra 6 e 12";
+        }
+    }
+
 ?>
 
 
@@ -15,25 +36,39 @@
     </head>
 
     <body>
+
         <div class="container text-white py-5">
             <div class="row g-4">
                 <div class="col-12">
                     <div class="d-flex justify-content-center">
-                        <form action="./index.php" method="get" class="bg-danger p-5 w-50">
+                        <form action="./index.php" method="get" class="bg-danger py-5 px-4 w-50">
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <h1 class="text-center">Genera la tu password sicura!</h1>
+                                    <h1 class="text-center">Genera la tua password sicura!</h1>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span>Inserisci qui un numero</span>
-                                            <input type="number" name="number" id="number" min="6" max="12" class="form-control form-control-sm w-25">
+                                            <input type="number" name="number" id="number" class="form-control form-control-sm w-25">
                                         </div>
                                     </div>
                                 </div>
+                                <?php if (isset($password)) { ?>
+                                    <div class="col-12 mt-4">
+                                        <div class="alert alert-success">
+                                            La tua password generata è: <strong><?php echo $password; ?></strong>
+                                        </div>
+                                    </div>
+                                <?php } elseif (isset($error)) { ?>
+                                    <div class="col-12 mt-4">
+                                        <div class="alert alert-danger">
+                                            <?php echo $error; ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
                                 <div class="col-12 mt-4">
-                                    <button type="submit" class=" btn btn-primary text-white">Invia</button>
+                                    <button type="submit" class="btn btn-primary text-white">Invia</button>
                                 </div>
                             </div>
                         </form>
