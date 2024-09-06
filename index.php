@@ -15,6 +15,32 @@
     </head>
 
     <body>
+        <div class="container text-white py-5">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <form action="./index.php" method="get" class="bg-danger p-5 w-50">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <h1 class="text-center">Genera la tu password sicura!</h1>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Inserisci qui un numero</span>
+                                            <input type="number" name="number" id="number" min="6" max="12" class="form-control form-control-sm w-25">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class=" btn btn-primary text-white">Invia</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </body>
 
