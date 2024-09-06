@@ -13,3 +13,13 @@ Verificato il corretto funzionamento del nostro codice, spostiamo la logica in u
 
 Ricordatevi di fare sempre il file README.md
 NUMERO DI PUSH MINIMO: 7
+
+# Scomposizione del problema
+
+- Milestone 1
+Creare un file index.php
+    creare un form che invii la lunghezza della password in GET
+    creare una funzione che, basandosi sul dato inserito dall'utente, restituirà una password casuale
+
+- Milestone 2
+Creare un secondo file che gestirà la nostra funzione e che includeremo poi nel file principale  
