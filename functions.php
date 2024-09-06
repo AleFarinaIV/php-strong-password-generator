@@ -2,7 +2,7 @@
 
     function generatePassword($length) {
 
-        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&/^,.><€";
+        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&/^,.€";
         $password = '';
         for ($i = 0; $i < $length; $i++) {
             $password.= $characters[rand(0, strlen($characters) - 1)];
